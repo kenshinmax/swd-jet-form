@@ -1,0 +1,67 @@
+/*
+    Document   : override
+    Created on : <date>
+    Author     : <author>
+    Description:
+        This is where any of your application specific styles should be included
+*/
+
+body {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+header {
+	position: fixed;
+    display: block;
+    height: 64px;
+    line-height: 64px;
+    min-width: 100%;
+    font-size: 2rem;
+    background: #ff4081 !important;
+    color: #fff;
+    padding: 0px ;
+    z-index: 3;
+}
+.progress {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    height: 8px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin-top: 63px;
+}
+.main {
+	padding-top: 64px;
+    padding-bottom: 40px;
+}
+
+.container {
+	display: block;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    padding: 10px;
+    margin: 20px 0;
+    height: auto;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+.card h2 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.submit-container {
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+}

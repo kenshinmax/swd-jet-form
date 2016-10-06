@@ -80,6 +80,7 @@ require(["nls/MessageBundle", "ojs/ojcore", "knockout", "jquery", "ojs/ojknockou
     };
 
     function MainViewModel(){
+      // Main view model
       var self = this;
       self.titleLabel = ko.observable("Checkout page");
       self.copyright = ko.observable("TrueValue © 2015");
@@ -104,6 +105,7 @@ require(["nls/MessageBundle", "ojs/ojcore", "knockout", "jquery", "ojs/ojknockou
       self.otherzipcode = ko.observable();
       self.numComponents = ko.observable(10);
       self.numCompletComponents = ko.observable(0);
+      self.messages = ko.observableArray();
 
       self.disableFormControls = ko.observable(true);
 
@@ -121,12 +123,12 @@ require(["nls/MessageBundle", "ojs/ojcore", "knockout", "jquery", "ojs/ojknockou
 
 
       self.optionChangeCallback = function (event, data){
-       console.log("callback data: ", data); 
+       //console.log("callback data: ", data); 
        var trackerObj = ko.utils.unwrapObservable(self.tracker);
        //console.log("Tracker: ",  ko.utils.unwrapObservable(self.tracker));
       
        if(!trackerObj){
-        console.log("we have an issue!!")
+        //console.log("we have an issue!!")
        }
       };
       /**
@@ -197,7 +199,7 @@ require(["nls/MessageBundle", "ojs/ojcore", "knockout", "jquery", "ojs/ojknockou
         try
         {
           // clear all messages before validating property
-          messages([]);
+          self.messages([]);
           validator.validate(ko.utils.unwrapObservable(obs));
         }
         catch (e)
@@ -215,7 +217,7 @@ require(["nls/MessageBundle", "ojs/ojcore", "knockout", "jquery", "ojs/ojknockou
 
           valid = false;
           msgs.push(message);
-          messages(msgs);
+          self.messages(msgs);
         }
 
         return valid;
@@ -223,11 +225,11 @@ require(["nls/MessageBundle", "ojs/ojcore", "knockout", "jquery", "ojs/ojknockou
       ko.bindingHandlers.markComplete = {
          init: function(element, valueAccessor) {
          // initiall calling to show as not complete
-           console.log("calling custom binding : markComplete");
+           //console.log("calling custom binding : markComplete");
 
          }, 
          update: function(element, valueAccessor){
-           console.log("calling custom update: markComplete");
+           //console.log("calling custom update: markComplete");
 
          }
       };
@@ -237,7 +239,7 @@ require(["nls/MessageBundle", "ojs/ojcore", "knockout", "jquery", "ojs/ojknockou
       ko.bindingHandlers.fadeVisible = {
        init: function(element, valueAccessor) {
         // Initially set the element to be instantly visible/hidden depending on the value
-        console.log("calling custom binding!!");
+        //console.log("calling custom binding!!");
         var value = valueAccessor();
         
         $(element).toggle(ko.unwrap(value)); // Use "unwrapObservable" so we can handle values that may or may not be observable

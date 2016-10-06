@@ -18,4 +18,4 @@ This is an Oracle JET project, so use the command line to install the dependenci
 </li>
 </ol>
 ## Run
-Oracle JET provides tooling (grunt) and pre-configured grunt tasks for running your application.  In a commandline, navigate to the swd-jet-form directory and enter grunt serve.
+Oracle JET provides tooling (grunt) and pre-configured grunt tasks for running your application.  In a command-line, navigate to the swd-jet-form directory and enter grunt serve.
